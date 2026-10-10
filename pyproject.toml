@@ -1,0 +1,17 @@
+[project]
+name = "fhwa-agent-003"
+version = "1.0.0"
+description = "FHWA Traffic Anomaly Detection Agent (TSMO/TIM/PM3/NPMRDS/RITIS/Waze/WZDx)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true

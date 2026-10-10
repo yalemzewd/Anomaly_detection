@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fhwa-agent-003-config
+  namespace: fhwa-ai
+data:
+  ENVIRONMENT: "production"
+  DEBUG: "false"
+  API_V1_STR: "/api/v1"
+  PORT: "8005"
+  POSTGRES_HOST: "postgres.fhwa-ai.svc.cluster.local"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "fhwa_traffic_anomaly"
+  REDIS_URL: "redis://redis.fhwa-ai.svc.cluster.local:6379/0"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka.fhwa-ai.svc.cluster.local:9092"
+  KAFKA_GROUP_ID: "traffic-sensor-consumer"
+  KAFKA_SENSOR_TOPIC: "detector-readings"
+  KAFKA_CV_BSM_TOPIC: "cv.bsm.raw"
+  KAFKA_WZDX_TOPIC: "wzdx.work.zones"
+  NPMRDS_API_ENDPOINT: "https://api.npmrds.org"
+  RITIS_API_ENDPOINT: "https://ritis.fhwa.dot.gov/api"
+  ANOMALY_MODEL_PATH: "/app/models/anomaly_lstm_iso.pkl"
+  INCIDENT_MODEL_PATH: "/app/models/incident_xgb.pkl"
+  ANOMALY_THRESHOLD: "0.65"
+  ANOMALY_HIGH_THRESHOLD: "0.78"
+  ANOMALY_CRITICAL_THRESHOLD: "0.88"
+  SMTP_HOST: "smtp.fhwa.dot.gov"
+  ALERT_TO_EMAIL: "tmc@fhwa.dot.gov"
